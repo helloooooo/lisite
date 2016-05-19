@@ -27,7 +27,7 @@ public class MaxPointsOnALine149 {
             for(int i = 0; i < length; i++){
                 //遍历所有的两两之间的直线
                 int same = 0, viticals = 0;
-                Map<Double, Integer> slope = new HashMap<Double, Integer>();
+                Map<Float, Integer> slope = new HashMap<Float, Integer>();
                 for(int j = i+1; j < length; j++){
                     if(points[i].x == points[j].x){
                         if(points[i].y == points[j].y)
@@ -35,7 +35,7 @@ public class MaxPointsOnALine149 {
                         else viticals++;
                     }
                     else{
-                        double s = (points[j].y - points[i].y) / (double)(points[j].x - points[i].x);
+                        float s = (points[j].y - points[i].y) / (float)(points[j].x - points[i].x);
                         if(points[i].y == points[j].y)
                             s = 0;
                         Integer val = slope.get(s);
@@ -68,9 +68,12 @@ public class MaxPointsOnALine149 {
 
     public static void main(String[] args) {
         System.out.println(0/1.0 == 0/-1.0);
-        Double a = 0/1.0;
-        Double b = 0/-1.0;
+        float a = 0/(float)1;
+        float b = 0/(float)-1.0;
         System.out.println(a == b);
+        Double a1 = 0/1.0;
+        Double b1 = 0/-1.0;
+        System.out.println(a1 == b1);
         Point p1 = new Point(2,3);
         Point p2 = new Point(3,3);
         Point p3 = new Point(-5,3);
