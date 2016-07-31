@@ -1,9 +1,8 @@
 package com.bruce.leetcode;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import org.apache.commons.lang.StringUtils;
+
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -11,18 +10,15 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class MainDemo {
     public static void main(String[] args) {
-        Map<String, String> map = new ConcurrentHashMap<String, String>();
-        map.put("a", "aVal");
-        map.put("b", "bVal");
-        Iterator<Map.Entry<String, String>> iter = map.entrySet().iterator();
-        while (iter.hasNext()){
-            Map.Entry<String, String> entry = iter.next();
-            String key = entry.getKey();
-            if(key == "a"){
-                iter.remove();
-            }
+        String a = "poolSkuOffline,poolSku,skuOrderOffline,brandResource,skuBrand,618Cid3Brand,mainBrand,brandOfflineFeature,brandOfflineFeaturePerfOpt,brandProfile,brandProfilePerfOpt,brandCtr,brandActCtr,skuAttributeInfo,skuDataInfo,skuPriceInfo";
+        String b = "skuOffline,sky_towers,selections,delivery_infos,poolSku,skuOrderOffline,poolSkuOffline,wxsqCidCidMap,wxsqCidSkuMain,accompanyKey";
+        Set<String> st = new HashSet<String>();
+        for(String t: a.split(",")){
+            st.add(t);
         }
-        System.out.println(map.get("a"));
-        System.out.println(map.get("b"));
-    }
+        for(String t: b.split(",")){
+            st.add(t);
+        }
+        System.out.println(StringUtils.join(st,","));
+     }
 }
