@@ -1,7 +1,6 @@
 package com.bruce.concurrentdemo.chapter5;
 
 import com.bruce.concurrentdemo.chapter4.SleepUtils;
-import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +21,6 @@ public class TwinsLockTest {
 //        list.remove(o1);
         System.out.println(list);
     }
-    @Test
     public void test(){
         final Lock lock = new TwinsLock();
         class Work extends Thread{
