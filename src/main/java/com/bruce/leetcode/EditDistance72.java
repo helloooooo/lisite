@@ -6,7 +6,8 @@ package com.bruce.leetcode;
 public class EditDistance72 {
     public static void main(String[] args) {
         Solution sol = new Solution();
-        sol.minDistance("aaa", "bba");
+        int i = sol.minDistance("aaa", "bba");
+        System.out.println("i = " + i);
     }
     static class Solution{
         public int minDistance(String word1, String word2){

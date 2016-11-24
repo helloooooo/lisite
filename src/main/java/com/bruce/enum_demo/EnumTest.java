@@ -1,5 +1,7 @@
 package com.bruce.enum_demo;
 
+import org.junit.Test;
+
 import java.util.EnumMap;
 import java.util.EnumSet;
 
@@ -7,6 +9,29 @@ import java.util.EnumSet;
  * Created by 腾 on 2016/7/10.
  */
 public class EnumTest {
+
+    enum Mobile{
+        Samsung(400), Nokia(250), Motorola(325);
+        int price;
+        Mobile(int p){
+            price = p;
+        }
+        int showPrice(){
+            return price;
+        }
+        public final String lowerName = this.name().toLowerCase();
+
+
+    }
+
+    @Test
+    public void testMobile(){
+        for(Mobile m: Mobile.values()){
+            System.out.println(m.name());
+        }
+
+    }
+
     enum Light{
         RED(1),YELLOW(2),GREEN(3);
         private int code;
